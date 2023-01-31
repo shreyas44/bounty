@@ -1,12 +1,12 @@
-import {Text, Rect} from "react-konva"
+import { Text, Rect } from "react-konva";
 
-const getScaleVal = (scale) => scale < 1 ? 0.9 : 1.1
+const getScaleVal = (scale) => (scale < 1 ? 0.9 : 1.1);
 
 export function GroupRect(props) {
   const scale =
-    props.scale < 1 ?
-      Math.min(2, 1 / props.scale) :
-      Math.max(1, 1 / props.scale)
+    props.scale < 1
+      ? Math.min(2, 1 / props.scale)
+      : Math.max(1, 1 / props.scale);
 
   return (
     <>
@@ -15,7 +15,7 @@ export function GroupRect(props) {
         fontSize={26}
         fill="#A8A8A8"
         x={props.x}
-        y={props.y - (35 * scale * getScaleVal(props.scale))}
+        y={props.y - 35 * scale * getScaleVal(props.scale)}
         scaleX={scale}
         scaleY={scale}
       />
@@ -31,7 +31,5 @@ export function GroupRect(props) {
         opacity={0.05}
       />
     </>
-  )
+  );
 }
-
-
